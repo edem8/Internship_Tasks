@@ -1,1 +1,1 @@
-1. For task 1 you were suppose to set all the values except totalMarks in a method called setStudDetails not the constructor and also don’t set them in the method directly, take them as parameters of the methods and assign them to their respective variables
+
