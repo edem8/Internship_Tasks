@@ -22,7 +22,7 @@ public class TestMain {
         System.out.println(t1.nextSecond().nextSecond());
 
         // Test previousSecond()
-        System.out.println(t1.previousSecond());
-        System.out.println(t1.previousSecond().previousSecond());
+       // System.out.println(t1.previousSecond());
+        //System.out.println(t1.previousSecond().previousSecond());
     }
 }

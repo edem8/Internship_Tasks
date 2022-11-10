@@ -3,7 +3,7 @@ public class Time {
     public int minute;
     public int second;
 
-    public Time(int hour, int minute, int second){
+    public Time(int hour, int minute, int second) {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
@@ -33,18 +33,18 @@ public class Time {
         this.second = second;
     }
 
-    public void setTime(int hour, int minute, int second){
+    public void setTime(int hour, int minute, int second) {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
     }
 
     public String toString() {
-    return  String.format("%d%d:%d%d:%d%d", (hour/10), (hour%10), (minute/10), (minute%10), (second/10), (second%10));
+        return String.format("%d%d:%d%d:%d%d", (hour / 10), (hour % 10), (minute / 10), (minute % 10), (second / 10), (second % 10));
     }
 
     public Time nextSecond() {
-        if (second == 59) {
+        if (second == 60) {
             second = 0;
             if (minute == 59) {
                 minute = 0;
@@ -59,14 +59,18 @@ public class Time {
         } else {
             second++;
         }
-        
+        return new Time(getHour(), getMinute(), getSecond());
     }
 
-    public Time previousSecond(){
+   // public Time previousSecond() {
+     //   if (second == 0) {
+        //    second = 59;
 
-    }
-
-
+        //} else {
+          //  second--;
+       // }
+       // return new Time(getHour(), getMinute(), getSecond());
+  //  }
 
 
 }
