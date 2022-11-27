@@ -1,19 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Image, View } from 'react-native';
-import cloud from './assets/images/cloud.jpg'
+import { useState } from 'react';
+import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native';
+import cloud from './assets/images/cloud.png'
 
 
 export default function App() {
+  const show = "Get Started";
+
+
+
   return (
     <View style={styles.container}>
+      <Image source={cloud} style={styles.cloud_image}/>
 
-      <View>
+      <View style={styles.text_container}>
         <Text style={styles.title}>Discover the Weather in your City</Text>
         <Text style={styles.description}> Get to know your weather maps and radar precipitation forecast</Text>
         
-        <View style={styles.getting_started_container}>
-          <Text style={styles.getting_started}>Get Started</Text>
-        </View>
+        <TouchableOpacity style={styles.getting_started_container}>
+          <Text style={styles.getting_started}>{show}</Text>
+        </TouchableOpacity>
 
       </View>
 
@@ -32,7 +38,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
+  cloud_image: {
+    width: 250,
+    height: 250,
+    
+  
+  },
 
+  text_container:{
+    
+    marginTop: 20
+  },
 
   title: {
     flexDirection: 'column',
@@ -50,13 +66,15 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     color:'grey',
     textAlign:'center',
-    fontSize: 18,
+    fontSize: 17,
     lineHeight: 30,
+    fontWeight: 'bold',
   },
 
   getting_started_container: {
     backgroundColor: '#0095FF',
     margin: 20,
+    marginTop: 120,
     borderRadius: 10,
 
 
